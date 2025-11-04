@@ -7,34 +7,19 @@ import CoreLocation
 //  Created by khawla on 01/11/2025.
 //
 
-/// Represents the type of message exchanged in a conversation.
-enum MessageType: String, Codable {
-    case text
-    case image
-    case location
-}
+// Message+CoreDataProperties.swift
+import Foundation
+import CoreData
 
-/// Represents a single message exchanged between two users.
-struct Message: Identifiable, Codable {
-    /// Unique message ID
-    var id = UUID()
-    
-    /// Sender name or ID
-    var sender: String
-    
-    /// Optional text content
-    var text: String?
-    
-    /// Optional image data
-    var imageData: Data?
-    
-    /// Optional location coordinates
-    var latitude: Double?
-    var longitude: Double?
-    
-    /// Date and time the message was sent
-    var timestamp: Date
-    
-    /// Type of message (text, image, or location)
-    var type: MessageType
+extension Message {
+    @nonobjc public class func fetchRequest() -> NSFetchRequest<Message> {
+        return NSFetchRequest<Message>(entityName: "Message")
+    }
+
+    @NSManaged public var id: UUID
+    @NSManaged public var text: String?
+    @NSManaged public var imageData: Data?
+    @NSManaged public var timestamp: Date
+    @NSManaged public var isSent: Bool
+    @NSManaged public var conversation: Conversation?
 }
