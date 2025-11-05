@@ -1,9 +1,24 @@
+// =============================================
+// MARK: - Contacts View
+// =============================================
 "Contacts" = "Contacts";
+"Search" = "Search";
+"Cancel" = "Cancel";
+
+// =============================================
+// MARK: - Conversations List View
+// =============================================
 "Conversations" = "Conversations";
 "Messages" = "Messages";
-"Search" = "Search";
-"Send" = "Send";
-"Search POIs" = "Search POIs";
-"Cancel" = "Cancel";
-"Points of Interest" = "Points of Interest";
+
+// =============================================
+// MARK: - Message (Conversation) View
+// =============================================
 "Type a message" = "Type a message";
+"Send" = "Send";
+
+// =============================================
+// MARK: - POI (Points of Interest) View
+// =============================================
+"Points of Interest" = "Points of Interest";
+"Search POIs" = "Search POIs";
