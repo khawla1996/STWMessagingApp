@@ -30,5 +30,3 @@ The goal is to show contact list management, conversations, messages, and sharin
 - **Localized** in English and French  
 
 ---
-
-### 🧱 Project Structure
