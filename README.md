@@ -1,7 +1,5 @@
 # STWMessagingApp
 
-# 📱 STW Messaging App
-
 ###  Overview  
 A small **iOS messaging app** built with **UIKit** and **Core Data**.  
 The goal is to show contact list management, conversations, messages, and sharing of POIs (Points of Interest).
