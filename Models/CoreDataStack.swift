@@ -1,27 +1,29 @@
-
+import Foundation
 import CoreData
 
-final class CoreDataStack {
+class CoreDataStack {
     static let shared = CoreDataStack()
-    let persistentContainer: NSPersistentContainer
 
-    private init() {
-        persistentContainer = NSPersistentContainer(name: "STWMessagingApp")
-        persistentContainer.loadPersistentStores { _, error in
+    lazy var persistentContainer: NSPersistentContainer = {
+        let container = NSPersistentContainer(name: "STWMessagingApp")
+        container.loadPersistentStores { _, error in
             if let error = error {
-                fatalError("Core Data failed to load: \(error)")
+                fatalError("Core Data load error: \(error)")
             }
         }
-    }
+        return container
+    }()
 
-    var context: NSManagedObjectContext { persistentContainer.viewContext }
+    var context: NSManagedObjectContext {
+        return persistentContainer.viewContext
+    }
 
     func saveContext() {
         if context.hasChanges {
             do {
                 try context.save()
             } catch {
-                print("Save failed: \(error)")
+                print("Error saving context: \(error)")
             }
         }
     }
